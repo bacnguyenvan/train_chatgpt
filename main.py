@@ -1,11 +1,14 @@
 
 import tkinter as tk
 import openai
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 # Replace FINE_TUNED_MODEL with the name of your fine-tuned model
-model_name = "curie:ft-personal-2023-02-15-08-26-08"
-openai.api_key="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"
+model_name = os.getenv("MODEL_NAME")
+openai.api_key=os.getenv("OPEN_API_KEY")
 
 def on_submit():
    # Get the prompt from the input field
